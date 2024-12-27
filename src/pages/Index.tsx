@@ -1,6 +1,7 @@
 import { Countdown } from "@/components/Countdown";
 import { TokenStats } from "@/components/TokenStats";
 import { HowToBuy } from "@/components/HowToBuy";
+import { Terminal } from "@/components/Terminal";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -82,6 +83,9 @@ const Index = () => {
               Not Financial Advice | DYOR
             </div>
           </div>
+
+          {/* Terminal Widget */}
+          <Terminal />
 
           {/* Rotating New Year Quotes */}
           <div className="max-w-md mx-auto space-y-2 text-sm">
