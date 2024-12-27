@@ -9,10 +9,10 @@ export const SocialIcons = () => {
         duration: 3000,
       });
     } else {
-      toast("Redirecting...", {
-        description: `Opening ${platform} in a new tab! 🔗`,
+      toast("Coming Soon!", {
+        description: "We are still updating the socials. Stay tuned!",
         className: "bg-background/80 backdrop-blur-xl border border-primary/20",
-        duration: 2000,
+        duration: 3000,
       });
     }
   };
@@ -21,7 +21,7 @@ export const SocialIcons = () => {
     <div className="flex justify-center gap-6 items-center py-8">
       {/* Twitter */}
       <button
-        onClick={() => handleIconClick("Twitter", true)}
+        onClick={() => handleIconClick("Twitter")}
         className="transition-transform hover:scale-110 bg-transparent border-none p-0"
       >
         <img src="/lovable-uploads/90ad0bdc-6cc2-4b4e-82ff-e9d239b7ff6b.png" alt="Twitter" className="w-8 h-8" />
@@ -29,7 +29,7 @@ export const SocialIcons = () => {
 
       {/* Telegram */}
       <button
-        onClick={() => handleIconClick("Telegram", true)}
+        onClick={() => handleIconClick("Telegram")}
         className="transition-transform hover:scale-110 bg-transparent border-none p-0"
       >
         <img src="/lovable-uploads/c9485004-c2d8-4b70-b679-707dccbce321.png" alt="Telegram" className="w-8 h-8" />
@@ -37,7 +37,7 @@ export const SocialIcons = () => {
 
       {/* Medium */}
       <button
-        onClick={() => handleIconClick("Medium", true)}
+        onClick={() => handleIconClick("Medium")}
         className="transition-transform hover:scale-110 bg-transparent border-none p-0"
       >
         <img src="/lovable-uploads/198e74f1-7a89-4628-a46f-60cec792907e.png" alt="Medium" className="w-8 h-8" />
