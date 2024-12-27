@@ -1,6 +1,14 @@
-import { Twitter } from "lucide-react";
+import { toast } from "sonner";
 
 export const SocialIcons = () => {
+  const handleUnlinkedClick = (platform: string) => {
+    toast("Coming Soon!", {
+      description: `${platform} social link will be updated soon! 🚀`,
+      className: "bg-background/80 backdrop-blur-xl border border-primary/20",
+      duration: 3000,
+    });
+  };
+
   return (
     <div className="flex justify-center gap-6 items-center py-8">
       {/* Twitter */}
@@ -34,24 +42,20 @@ export const SocialIcons = () => {
       </a>
 
       {/* Gecko */}
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="transition-transform hover:scale-110"
+      <button
+        onClick={() => handleUnlinkedClick("CoinGecko")}
+        className="transition-transform hover:scale-110 bg-transparent border-none p-0"
       >
         <img src="/lovable-uploads/f79fa95d-0bda-4553-a0db-766e5c4dec4b.png" alt="Gecko" className="w-8 h-8" />
-      </a>
+      </button>
 
       {/* Zapper */}
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="transition-transform hover:scale-110"
+      <button
+        onClick={() => handleUnlinkedClick("Zapper")}
+        className="transition-transform hover:scale-110 bg-transparent border-none p-0"
       >
         <img src="/lovable-uploads/9b48d9a6-e1d2-4221-8c1e-009600f76054.png" alt="Zapper" className="w-8 h-8" />
-      </a>
+      </button>
     </div>
   );
 };
