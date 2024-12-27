@@ -15,7 +15,6 @@ export const TokenStats = () => {
     holders: 1250,
   });
 
-  // Simulate real-time updates
   useEffect(() => {
     const interval = setInterval(() => {
       setStats(prev => ({
@@ -34,29 +33,56 @@ export const TokenStats = () => {
         title="Price"
         value={`$${stats.price.toFixed(6)}`}
         change="+125%"
+        gradient="from-primary to-accent"
       />
       <StatCard
         title="Market Cap"
         value={`$${(stats.marketCap / 1000000).toFixed(2)}M`}
+        gradient="from-accent to-secondary"
       />
       <StatCard
         title="24h Volume"
         value={`$${(stats.volume24h / 1000).toFixed(2)}K`}
+        gradient="from-secondary to-primary"
       />
       <StatCard
         title="Holders"
         value={stats.holders.toLocaleString()}
+        gradient="from-primary to-secondary"
       />
     </div>
   );
 };
 
-const StatCard = ({ title, value, change }: { title: string; value: string; change?: string }) => (
-  <div className="bg-black/30 backdrop-blur-lg rounded-lg p-4 border border-primary/20 hover:border-primary/40 transition-all">
-    <h3 className="text-primary/70 text-sm">{title}</h3>
-    <p className="text-xl md:text-2xl font-bold text-white mt-1">{value}</p>
-    {change && (
-      <span className="text-green-400 text-sm">{change}</span>
-    )}
+const StatCard = ({ 
+  title, 
+  value, 
+  change, 
+  gradient 
+}: { 
+  title: string; 
+  value: string; 
+  change?: string;
+  gradient: string;
+}) => (
+  <div className="group">
+    <div className="relative bg-black/30 backdrop-blur-lg rounded-lg p-4 border border-primary/20 
+                    hover:border-primary/40 transition-all duration-300 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 
+                      group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+      <div className="relative">
+        <h3 className={`text-sm bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
+          {title}
+        </h3>
+        <p className="text-xl md:text-2xl font-bold text-white mt-1 group-hover:scale-105 transition-transform">
+          {value}
+        </p>
+        {change && (
+          <span className="text-green-400 text-sm animate-pulse">
+            {change}
+          </span>
+        )}
+      </div>
+    </div>
   </div>
 );

@@ -35,13 +35,23 @@ export const Countdown = () => {
   return (
     <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
       {Object.entries(timeLeft).map(([unit, value]) => (
-        <div key={unit} className="text-center">
-          <div className="bg-black/30 backdrop-blur-lg rounded-lg p-4 border border-primary/20">
-            <div className="text-4xl md:text-6xl font-bold text-primary animate-glow">
-              {value}
-            </div>
-            <div className="text-sm md:text-base text-primary/70 capitalize">
-              {unit}
+        <div key={unit} className="text-center group perspective-1000">
+          <div className="relative transform transition-all duration-500 group-hover:rotate-y-180">
+            <div className="bg-black/30 backdrop-blur-lg rounded-lg p-4 border border-primary/20 
+                          group-hover:border-primary/40 transition-all duration-300
+                          animate-float">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-xl"></div>
+                <div className="relative">
+                  <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent
+                                animate-pulse">
+                    {value}
+                  </div>
+                  <div className="text-sm md:text-base text-primary/70 capitalize mt-2">
+                    {unit}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
