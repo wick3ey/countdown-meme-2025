@@ -4,7 +4,7 @@ export const SocialIcons = () => {
   const handleIconClick = (platform: string, hasLink: boolean = false) => {
     if (!hasLink) {
       toast("Coming Soon!", {
-        description: `${platform} social link will be updated soon! 🚀`,
+        description: "We are still updating the socials. Stay tuned!",
         className: "bg-background/80 backdrop-blur-xl border border-primary/20",
         duration: 3000,
       });
