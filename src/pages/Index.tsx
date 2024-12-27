@@ -6,6 +6,15 @@ import { toast } from "sonner";
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [currentQuote, setCurrentQuote] = useState(0);
+
+  const quotes = [
+    "NEW YEAR NEW ME(ME) 🎭",
+    "2025 IS OUR YEAR SER 🚀",
+    "WAGMI IN 2025 💎",
+    "HODL TILL 2025 OR NGMI 💪",
+    "NEW YEAR SAME DEGEN 🎮"
+  ];
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -13,17 +22,25 @@ const Index = () => {
     };
     window.addEventListener("mousemove", handleMouseMove);
     
+    // Rotate quotes every 3 seconds
+    const quoteInterval = setInterval(() => {
+      setCurrentQuote((prev) => (prev + 1) % quotes.length);
+    }, 3000);
+
     // Show welcome toast
     toast("GM Degens! 🚀", {
       description: "Welcome to the most degenerate token of 2025!",
     });
 
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      clearInterval(quoteInterval);
+    };
   }, []);
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Animated Background */}
+      {/* Animated Background with Fireworks */}
       <div className="fixed inset-0 -z-10">
         <div 
           className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1)_0%,rgba(0,0,0,0)_100%)] animate-pulse"
@@ -49,20 +66,28 @@ const Index = () => {
             ))}
           </div>
         </div>
+        {/* Fireworks Effect */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 rounded-full animate-firework"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${Math.random() * 2 + 1}s`,
+              }}
+            />
+          ))}
+        </div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />
       </div>
 
       {/* Main Content */}
       <div className="container pt-20 pb-10 relative">
         <div className="text-center space-y-8">
-          {/* Static Logo */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-pulse group-hover:animate-spin-slow" />
-            <div className="relative w-40 h-40 mx-auto bg-gradient-to-r from-primary via-secondary to-accent rounded-full flex items-center justify-center text-4xl font-bold animate-float">
-              2025
-            </div>
-          </div>
-
           {/* Title with Glitch Effect */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="2025 TOKEN">
@@ -76,16 +101,10 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Meme Notes */}
+          {/* Rotating New Year Quotes */}
           <div className="max-w-md mx-auto space-y-2 text-sm">
-            <div className="bg-accent/10 backdrop-blur-lg p-2 rounded-lg animate-float">
-              💎 "Diamond hands only, paper hands ngmi"
-            </div>
-            <div className="bg-primary/10 backdrop-blur-lg p-2 rounded-lg animate-float delay-100">
-              🚀 "We're all gonna make it in 2025"
-            </div>
-            <div className="bg-secondary/10 backdrop-blur-lg p-2 rounded-lg animate-float delay-200">
-              🌙 "To the moon and beyond!"
+            <div className="bg-accent/10 backdrop-blur-lg p-4 rounded-lg animate-float text-xl font-bold">
+              {quotes[currentQuote]}
             </div>
           </div>
 

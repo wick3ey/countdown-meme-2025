@@ -1,0 +1,18 @@
+@keyframes firework {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(20);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(30);
+    opacity: 0;
+  }
+}
+
+.animate-firework {
+  animation: firework ease-out infinite;
+}
