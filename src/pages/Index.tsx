@@ -1,4 +1,3 @@
-import { TokenLogo } from "@/components/TokenLogo";
 import { Countdown } from "@/components/Countdown";
 import { TokenStats } from "@/components/TokenStats";
 import { HowToBuy } from "@/components/HowToBuy";
@@ -56,11 +55,11 @@ const Index = () => {
       {/* Main Content */}
       <div className="container pt-20 pb-10 relative">
         <div className="text-center space-y-8">
-          {/* Animated Logo */}
+          {/* Static Logo */}
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-pulse group-hover:animate-spin-slow" />
-            <div className="relative">
-              <TokenLogo />
+            <div className="relative w-40 h-40 mx-auto bg-gradient-to-r from-primary via-secondary to-accent rounded-full flex items-center justify-center text-4xl font-bold animate-float">
+              2025
             </div>
           </div>
 
