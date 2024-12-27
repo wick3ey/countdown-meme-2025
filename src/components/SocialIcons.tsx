@@ -5,14 +5,16 @@ export const SocialIcons = () => {
     if (!hasLink) {
       toast("Coming Soon!", {
         description: "We are still updating the socials. Stay tuned!",
-        className: "bg-background/80 backdrop-blur-xl border border-primary/20",
-        duration: 3000,
+        className: "bg-[#FDE1D3] border-none",
+        duration: 1000,
+        closeButton: true,
       });
     } else {
       toast("Coming Soon!", {
         description: "We are still updating the socials. Stay tuned!",
-        className: "bg-background/80 backdrop-blur-xl border border-primary/20",
-        duration: 3000,
+        className: "bg-[#FDE1D3] border-none",
+        duration: 1000,
+        closeButton: true,
       });
     }
   };
