@@ -4,7 +4,7 @@ interface TokenStats {
   supply: number;
   liquidityLocked: boolean;
   contractStatus: string;
-  holders: number;
+  holders: string;
 }
 
 export const TokenStats = () => {
@@ -12,19 +12,8 @@ export const TokenStats = () => {
     supply: 1000000000,
     liquidityLocked: true,
     contractStatus: 'Renounced',
-    holders: 1250,
+    holders: 'Loading...',
   });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStats(prev => ({
-        ...prev,
-        holders: prev.holders + Math.floor(Math.random() * 5),
-      }));
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -45,7 +34,7 @@ export const TokenStats = () => {
       />
       <StatCard
         title="Holders"
-        value={stats.holders.toLocaleString()}
+        value={stats.holders}
         gradient="from-primary to-secondary"
       />
     </div>

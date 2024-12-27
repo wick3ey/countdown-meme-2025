@@ -27,8 +27,8 @@ export const HowToBuy = () => {
         
         <StepCard
           step={3}
-          title="Swap for $2025"
-          description="Use Raydium or Jupiter to swap SOL for $2025"
+          title="Swap in Phantom"
+          description="Use Phantom's built-in swap feature to get $2025"
           buttonText="Contract (Soon)"
           onClick={() => toast.info("Contract address coming soon! 🚀")}
         />

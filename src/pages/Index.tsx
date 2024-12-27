@@ -22,12 +22,10 @@ const Index = () => {
     };
     window.addEventListener("mousemove", handleMouseMove);
     
-    // Rotate quotes every 3 seconds
     const quoteInterval = setInterval(() => {
       setCurrentQuote((prev) => (prev + 1) % quotes.length);
     }, 3000);
 
-    // Show welcome toast
     toast("GM Degens! 🚀", {
       description: "Welcome to the most degenerate token of 2025!",
     });
@@ -49,38 +47,22 @@ const Index = () => {
           }}
         />
         <div className="absolute inset-0">
-          {/* Matrix-like rain effect */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-20">
-            {Array.from({ length: 50 }).map((_, i) => (
+          {/* Fireworks Effect */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 20 }).map((_, i) => (
               <div
                 key={i}
-                className="absolute text-primary animate-fall"
+                className="absolute w-2 h-2 rounded-full animate-firework"
                 style={{
                   left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${Math.random() * 3 + 2}s`,
+                  top: `${Math.random() * 100}%`,
+                  backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${Math.random() * 2 + 1}s`,
                 }}
-              >
-                {Math.random() > 0.5 ? "2" : "5"}
-              </div>
+              />
             ))}
           </div>
-        </div>
-        {/* Fireworks Effect */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 rounded-full animate-firework"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${Math.random() * 2 + 1}s`,
-              }}
-            />
-          ))}
         </div>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />
       </div>
@@ -97,7 +79,7 @@ const Index = () => {
               The Most Degenerate NYE Token Ever Created
             </p>
             <div className="text-sm text-accent/60 animate-bounce">
-              Not Financial Advice | DYOR | 1000x Guaranteed*
+              Not Financial Advice | DYOR
             </div>
           </div>
 
