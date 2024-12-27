@@ -1,6 +1,7 @@
 import { TokenLogo } from "@/components/TokenLogo";
 import { Countdown } from "@/components/Countdown";
 import { TokenStats } from "@/components/TokenStats";
+import { HowToBuy } from "@/components/HowToBuy";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -122,13 +123,19 @@ const Index = () => {
         <Countdown />
       </div>
 
-      {/* Stats Section */}
+      {/* Token Stats Section */}
       <div className="container py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent blur-3xl" />
         <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-          Tokenomics to the Moon 🌙
+          $2025 Stats 📊
         </h2>
         <TokenStats />
+      </div>
+
+      {/* How to Buy Section */}
+      <div className="container py-10 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent blur-3xl" />
+        <HowToBuy />
       </div>
 
       {/* Footer Meme Note */}
