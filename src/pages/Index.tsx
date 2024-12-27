@@ -74,11 +74,11 @@ const Index = () => {
         <div className="text-center space-y-8">
           {/* Title with Glitch Effect */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="2025 TOKEN">
-              2025 TOKEN
+            <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="2025">
+              2025
             </h1>
             <p className="text-xl md:text-2xl text-primary/70 animate-pulse">
-              The Most Degenerate NYE Token Ever Created
+              The Most Degenerate NYE Ever Created
             </p>
             <div className="text-sm text-accent/60 animate-bounce">
               Not Financial Advice | DYOR
