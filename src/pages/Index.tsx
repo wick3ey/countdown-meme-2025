@@ -5,6 +5,7 @@ import { Terminal } from "@/components/Terminal";
 import { SocialIcons } from "@/components/SocialIcons";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { NewYearTerminal } from "@/components/NewYearTerminal";
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -87,6 +88,9 @@ const Index = () => {
 
           {/* Terminal Widget */}
           <Terminal />
+
+          {/* New Year Terminal */}
+          <NewYearTerminal />
 
           {/* Rotating New Year Quotes */}
           <div className="max-w-md mx-auto space-y-2 text-sm">
