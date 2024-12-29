@@ -50,35 +50,6 @@ const Index = () => {
         />
       </div>
 
-      {/* Animated Background with Fireworks */}
-      <div className="fixed inset-0 -z-10">
-        <div 
-          className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1)_0%,rgba(0,0,0,0)_100%)] animate-pulse"
-          style={{
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
-          }}
-        />
-        <div className="absolute inset-0">
-          {/* Fireworks Effect */}
-          <div className="absolute inset-0">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-2 h-2 rounded-full animate-firework"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${Math.random() * 2 + 1}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />
-      </div>
-
       {/* Main Content */}
       <div className="container pt-20 pb-10 relative">
         <div className="text-center space-y-8">
