@@ -41,11 +41,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Red Hat Logo */}
-      <div className="fixed top-4 right-4 z-50 w-16 h-16 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      {/* Kid Image */}
+      <div className="fixed top-4 right-4 z-50 w-24 h-24 opacity-80 hover:opacity-100 transition-opacity duration-300">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Red_Hat_logo.svg"
-          alt="Red Hat Logo"
+          src="/lovable-uploads/e58868da-e726-49eb-8c1f-60f3efbb1da8.png"
+          alt="Cute kid in red with glasses"
           className="w-full h-full object-contain animate-float"
         />
       </div>
