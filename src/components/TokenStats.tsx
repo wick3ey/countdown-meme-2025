@@ -19,7 +19,7 @@ export const TokenStats = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
       <StatCard
         title="Total Supply"
-        value={`${(stats.supply / 1000000).toFixed(0)}M`}
+        value="1B"
         gradient="from-primary to-accent"
       />
       <StatCard
