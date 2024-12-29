@@ -41,6 +41,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Red Hat Logo */}
+      <div className="fixed top-4 right-4 z-50 w-16 h-16 opacity-50 hover:opacity-100 transition-opacity duration-300">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Red_Hat_logo.svg"
+          alt="Red Hat Logo"
+          className="w-full h-full object-contain animate-float"
+        />
+      </div>
+
       {/* Animated Background with Fireworks */}
       <div className="fixed inset-0 -z-10">
         <div 
