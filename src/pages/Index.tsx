@@ -1,4 +1,3 @@
-import { Countdown } from "@/components/Countdown";
 import { TokenStats } from "@/components/TokenStats";
 import { HowToBuy } from "@/components/HowToBuy";
 import { Terminal } from "@/components/Terminal";
@@ -44,7 +43,7 @@ const Index = () => {
       {/* SilkRoad Logo */}
       <div className="fixed top-4 right-4 z-50 w-48 h-48 opacity-80 hover:opacity-100 transition-opacity duration-300">
         <img
-          src="/lovable-uploads/198e74f1-7a89-4628-a46f-60cec792907e.png"
+          src="/lovable-uploads/f1fb95ff-d9c0-4a94-aed6-8bf5bbbb62ff.png"
           alt="SilkRoad Logo"
           className="w-full h-full object-contain animate-float"
         />
@@ -94,20 +93,11 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Countdown Section */}
-      <div className="container py-10 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent blur-3xl" />
-        <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Time Until Launch 🚀
-        </h2>
-        <Countdown />
-      </div>
-
       {/* Token Stats Section */}
       <div className="container py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent blur-3xl" />
         <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-          $SilkRoad Stats 📊
+          $SilkRoad 📊
         </h2>
         <TokenStats />
       </div>

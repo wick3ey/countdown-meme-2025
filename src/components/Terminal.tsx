@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 
 const messages = [
-  "Initializing 2025 protocol...",
+  "Initializing SilkRoad protocol...",
   "Loading memetic potential...",
   "Scanning paper hands...",
   "WARNING: Diamond hands detected",
   "Analyzing moon trajectory...",
-  "NYE pump sequence activated",
+  "Pump sequence activated",
   "Deploying smart contracts...",
   "Bullish signals confirmed",
-  "2025 Token: The future is now",
+  "SilkRoad Token: The future is now",
   "Calculating gains...",
   "Result: Too high to compute",
-  "Happy New Year status: Imminent",
+  "Status: Ultra bullish",
   "Meme power level: Over 9000",
   "System status: Ultra bullish"
 ];
@@ -60,7 +60,7 @@ export const Terminal = () => {
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <span className="ml-4 text-sm text-green-400 font-mono">2025@token:~</span>
+        <span className="ml-4 text-sm text-green-400 font-mono">silkroad@terminal:~</span>
       </div>
       
       {/* Terminal Content */}
