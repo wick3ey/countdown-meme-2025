@@ -21,7 +21,6 @@ export const Preloader = ({ onLoadComplete }: { onLoadComplete: () => void }) =>
       setLoadingText(loadingTexts[currentIndex]);
     }, 800);
 
-    // Calculate the interval needed to reach 100% in 3.4 seconds
     const totalDuration = 3400; // 3.4 seconds in milliseconds
     const progressInterval = setInterval(() => {
       setProgress(prev => {
@@ -55,36 +54,53 @@ export const Preloader = ({ onLoadComplete }: { onLoadComplete: () => void }) =>
       {/* Matrix-like canvas background */}
       <canvas 
         id="matrixCanvas"
-        className="absolute inset-0 opacity-20"
-        style={{ width: '100%', height: '100%' }}
+        className="absolute inset-0 opacity-20 w-full h-full"
       />
       
-      <div className="relative z-10 w-full max-w-md px-4">
-        {/* Glitch effect title */}
+      <div className="relative z-10 w-full max-w-md px-4 sm:px-6 md:px-8">
+        {/* Glitch effect title - Responsive text sizes */}
         <h1 
-          className="text-4xl font-bold mb-8 text-center glitch-text" 
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 text-center glitch-text" 
           data-text="SYSTEM ACCESS"
         >
           SYSTEM ACCESS
         </h1>
 
-        {/* Loading text with typewriter effect */}
-        <div className="text-green-500 font-mono mb-4 h-6 text-center">
-          {loadingText}
+        {/* Loading text with typewriter effect - Responsive container */}
+        <div className="text-green-500 font-mono text-sm sm:text-base md:text-lg mb-4 h-6 sm:h-7 md:h-8 text-center overflow-hidden">
+          <span className="loading-text inline-block">
+            {loadingText}
+          </span>
         </div>
 
-        {/* Custom progress bar */}
-        <div className="w-full bg-gray-900 h-2 rounded-full overflow-hidden border border-green-500/20">
-          <div 
-            className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all duration-100"
-            style={{ width: `${progress}%` }}
-          />
+        {/* Custom progress bar container - Responsive sizing */}
+        <div className="w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto">
+          <div className="relative">
+            {/* Progress bar background */}
+            <div className="w-full bg-gray-900 h-2 sm:h-2.5 md:h-3 rounded-full overflow-hidden border border-green-500/20">
+              {/* Animated progress fill */}
+              <div 
+                className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all duration-100 relative"
+                style={{ width: `${progress}%` }}
+              >
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+              </div>
+            </div>
+
+            {/* Decorative lines */}
+            <div className="absolute -top-1 -bottom-1 left-0 right-0 bg-gradient-to-r from-green-500/0 via-green-500/10 to-green-500/0 animate-gradient-x"></div>
+          </div>
         </div>
 
-        {/* Progress percentage */}
-        <div className="text-green-500 font-mono text-sm mt-2 text-center">
+        {/* Progress percentage - Responsive text */}
+        <div className="text-green-500 font-mono text-xs sm:text-sm md:text-base mt-2 sm:mt-3 md:mt-4 text-center">
           {Math.round(progress)}% COMPLETE
         </div>
+
+        {/* Additional decorative elements for larger screens */}
+        <div className="hidden md:block absolute -top-10 -left-10 w-20 h-20 border border-green-500/20 rounded-full animate-pulse"></div>
+        <div className="hidden md:block absolute -bottom-10 -right-10 w-20 h-20 border border-green-500/20 rounded-full animate-pulse delay-100"></div>
       </div>
     </div>
   );
