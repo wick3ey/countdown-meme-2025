@@ -2,7 +2,6 @@ import { TokenStats } from "@/components/TokenStats";
 import { Terminal } from "@/components/Terminal";
 import { SocialIcons } from "@/components/SocialIcons";
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
 import { SilkroadTerminal } from "@/components/SilkroadTerminal";
 
 const Index = () => {
@@ -13,10 +12,6 @@ const Index = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);
-    
-    toast("Free Ross! 🗽", {
-      description: "Join the movement to free Ross Ulbricht",
-    });
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
