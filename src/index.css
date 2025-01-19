@@ -1,8 +1,8 @@
+@import './styles/animations.css';
+@import './styles/glitch.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './styles/animations.css';
-@import './styles/glitch.css';
 
 @layer base {
   :root {

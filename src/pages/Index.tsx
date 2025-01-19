@@ -4,7 +4,7 @@ import { Terminal } from "@/components/Terminal";
 import { SocialIcons } from "@/components/SocialIcons";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { NewYearTerminal } from "@/components/NewYearTerminal";
+import { SilkroadTerminal } from "@/components/SilkroadTerminal";
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -68,8 +68,8 @@ const Index = () => {
           {/* Terminal Widget */}
           <Terminal />
 
-          {/* New Year Terminal */}
-          <NewYearTerminal />
+          {/* Silkroad Terminal */}
+          <SilkroadTerminal />
 
           {/* Rotating New Year Quotes */}
           <div className="max-w-md mx-auto space-y-2 text-sm">
@@ -96,9 +96,6 @@ const Index = () => {
       {/* Token Stats Section */}
       <div className="container py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent blur-3xl" />
-        <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-          $SilkRoad 📊
-        </h2>
         <TokenStats />
       </div>
 
