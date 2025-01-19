@@ -5,7 +5,7 @@ export const HowToBuy = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-        How to Buy $2025
+        How to Buy $SILKROAD
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -28,7 +28,7 @@ export const HowToBuy = () => {
         <StepCard
           step={3}
           title="Swap in Phantom"
-          description="Use Phantom's built-in swap feature to get $2025"
+          description="Use Phantom's built-in swap feature to get $SILKROAD"
           buttonText="Contract (Soon)"
           onClick={() => toast.info("Contract address coming soon! 🚀")}
         />
