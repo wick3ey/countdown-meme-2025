@@ -41,11 +41,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Kid Image */}
+      {/* SilkRoad Logo */}
       <div className="fixed top-4 right-4 z-50 w-48 h-48 opacity-80 hover:opacity-100 transition-opacity duration-300">
         <img
-          src="/lovable-uploads/e58868da-e726-49eb-8c1f-60f3efbb1da8.png"
-          alt="Cute kid in red with glasses"
+          src="/lovable-uploads/198e74f1-7a89-4628-a46f-60cec792907e.png"
+          alt="SilkRoad Logo"
           className="w-full h-full object-contain animate-float"
         />
       </div>
@@ -55,11 +55,11 @@ const Index = () => {
         <div className="text-center space-y-8">
           {/* Title with Glitch Effect */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="2025">
-              2025
+            <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="Ross Ulbrich">
+              Ross Ulbrich
             </h1>
             <p className="text-xl md:text-2xl text-primary/70 animate-pulse">
-              The Most Degenerate NYE Ever Created
+              $SilkRoad - The Most Degenerate Token Ever Created
             </p>
             <div className="text-sm text-accent/60 animate-bounce">
               Not Financial Advice | DYOR
@@ -98,7 +98,7 @@ const Index = () => {
       <div className="container py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent blur-3xl" />
         <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Time Until 2025 Takeoff 🚀
+          Time Until Launch 🚀
         </h2>
         <Countdown />
       </div>
@@ -107,7 +107,7 @@ const Index = () => {
       <div className="container py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent blur-3xl" />
         <h2 className="text-2xl md:text-3xl text-center mb-8 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-          $2025 Stats 📊
+          $SilkRoad Stats 📊
         </h2>
         <TokenStats />
       </div>
