@@ -51,17 +51,17 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
             <InfoCard
               title="The Case"
-              content="Ross Ulbricht, arrested at 29, now 40, faces double life + 40 years with no parole for creating Silk Road, a marketplace promoting free trade."
+              content="Ross Ulbricht, arrested at 29, now 40, faces double life + 40 years with no parole for creating Silk Road - a darkweb marketplace that became the largest underground drug trading platform."
               gradient="from-primary to-accent"
             />
             <InfoCard
               title="Trump's Promise"
-              content="'If you vote for me, on day one, I will commute the sentence of Ross Ulbricht' - Donald Trump at the 2024 Libertarian National Convention"
+              content="Donald Trump has publicly committed to commute Ross Ulbricht's sentence on day one if elected. This promise was made at the 2024 Libertarian National Convention as part of a strategic deal."
               gradient="from-accent to-secondary"
             />
             <InfoCard
-              title="Take Action"
-              content="Support the movement to free Ross. He's been a model prisoner, pursuing education and helping others while incarcerated."
+              title="Why Free Ross?"
+              content="Ross has been a model prisoner, pursuing education and helping others. His sentence is extreme for a first-time, non-violent offense. The punishment doesn't fit the crime."
               gradient="from-secondary to-primary"
             />
           </div>
