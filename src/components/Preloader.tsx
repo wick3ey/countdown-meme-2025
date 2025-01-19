@@ -21,21 +21,32 @@ export const Preloader = ({ onLoadComplete }: { onLoadComplete: () => void }) =>
       setLoadingText(loadingTexts[currentIndex]);
     }, 800);
 
+    // Calculate the interval needed to reach 100% in 3.4 seconds
+    const totalDuration = 3400; // 3.4 seconds in milliseconds
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(progressInterval);
           clearInterval(textInterval);
-          setTimeout(() => onLoadComplete(), 500);
+          setTimeout(() => onLoadComplete(), 500); // Small delay after reaching 100%
           return 100;
         }
-        return prev + 1;
+        return prev + (100 / (totalDuration / 30)); // Update every 30ms to make it smooth
       });
     }, 30);
+
+    // Force completion after exactly 3.4 seconds
+    const forceComplete = setTimeout(() => {
+      clearInterval(progressInterval);
+      clearInterval(textInterval);
+      setProgress(100);
+      onLoadComplete();
+    }, totalDuration);
 
     return () => {
       clearInterval(progressInterval);
       clearInterval(textInterval);
+      clearTimeout(forceComplete);
     };
   }, [onLoadComplete]);
 
@@ -72,7 +83,7 @@ export const Preloader = ({ onLoadComplete }: { onLoadComplete: () => void }) =>
 
         {/* Progress percentage */}
         <div className="text-green-500 font-mono text-sm mt-2 text-center">
-          {progress}% COMPLETE
+          {Math.round(progress)}% COMPLETE
         </div>
       </div>
     </div>
