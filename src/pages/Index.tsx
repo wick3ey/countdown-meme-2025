@@ -1,5 +1,4 @@
 import { TokenStats } from "@/components/TokenStats";
-import { HowToBuy } from "@/components/HowToBuy";
 import { Terminal } from "@/components/Terminal";
 import { SocialIcons } from "@/components/SocialIcons";
 import { useEffect, useState } from "react";
@@ -8,15 +7,6 @@ import { SilkroadTerminal } from "@/components/SilkroadTerminal";
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [currentQuote, setCurrentQuote] = useState(0);
-
-  const quotes = [
-    "NEW YEAR NEW ME(ME) 🎭",
-    "2025 IS OUR YEAR SER 🚀",
-    "WAGMI IN 2025 💎",
-    "HODL TILL 2025 OR NGMI 💪",
-    "NEW YEAR SAME DEGEN 🎮"
-  ];
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -24,17 +14,12 @@ const Index = () => {
     };
     window.addEventListener("mousemove", handleMouseMove);
     
-    const quoteInterval = setInterval(() => {
-      setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 3000);
-
-    toast("GM Degens! 🚀", {
-      description: "Welcome to the most degenerate token of 2025!",
+    toast("Free Ross! 🗽", {
+      description: "Join the movement to free Ross Ulbricht",
     });
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      clearInterval(quoteInterval);
     };
   }, []);
 
@@ -54,15 +39,31 @@ const Index = () => {
         <div className="text-center space-y-8">
           {/* Title with Glitch Effect */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="Ross Ulbrich">
-              Ross Ulbrich
+            <h1 className="text-5xl md:text-7xl font-bold glitch-text" data-text="FREE ROSS ULBRICHT">
+              FREE ROSS ULBRICHT
             </h1>
             <p className="text-xl md:text-2xl text-primary/70 animate-pulse">
-              $SilkRoad - The Most Degenerate Token Ever Created
+              Join the Movement for Justice and Freedom
             </p>
-            <div className="text-sm text-accent/60 animate-bounce">
-              Not Financial Advice | DYOR
-            </div>
+          </div>
+
+          {/* Info Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
+            <InfoCard
+              title="The Case"
+              content="Ross Ulbricht, arrested at 29, now 40, faces double life + 40 years with no parole for creating Silk Road, a marketplace promoting free trade."
+              gradient="from-primary to-accent"
+            />
+            <InfoCard
+              title="Trump's Promise"
+              content="'If you vote for me, on day one, I will commute the sentence of Ross Ulbricht' - Donald Trump at the 2024 Libertarian National Convention"
+              gradient="from-accent to-secondary"
+            />
+            <InfoCard
+              title="Take Action"
+              content="Support the movement to free Ross. He's been a model prisoner, pursuing education and helping others while incarcerated."
+              gradient="from-secondary to-primary"
+            />
           </div>
 
           {/* Terminal Widget */}
@@ -71,49 +72,56 @@ const Index = () => {
           {/* Silkroad Terminal */}
           <SilkroadTerminal />
 
-          {/* Rotating New Year Quotes */}
-          <div className="max-w-md mx-auto space-y-2 text-sm">
-            <div className="bg-accent/10 backdrop-blur-lg p-4 rounded-lg animate-float text-xl font-bold">
-              {quotes[currentQuote]}
-            </div>
-          </div>
-
-          {/* Interactive Button */}
+          {/* Call to Action */}
           <div className="flex justify-center gap-4 mt-8">
             <button 
-              onClick={() => toast.success("You're officially a degen now! 🎉")}
+              onClick={() => window.open('https://freeross.org', '_blank')}
               className="group relative px-8 py-3 bg-primary/10 backdrop-blur-xl border border-primary/20 rounded-full overflow-hidden hover:bg-primary/20 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
               <span className="relative bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-105 transition-transform inline-block">
-                Ape In Now
+                Support Free Ross
               </span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Token Stats Section */}
-      <div className="container py-10 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent blur-3xl" />
-        <TokenStats />
-      </div>
-
-      {/* How to Buy Section */}
-      <div className="container py-10 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent blur-3xl" />
-        <HowToBuy />
-      </div>
-
       {/* Social Icons */}
       <SocialIcons />
 
-      {/* Footer Meme Note */}
-      <div className="text-center text-sm text-primary/40 pb-4 animate-pulse">
-        *Not actually guaranteed. But trust us bro 😉
+      {/* Footer Note */}
+      <div className="text-center text-sm text-primary/40 pb-4">
+        Join the movement for justice and freedom
       </div>
     </div>
   );
 };
+
+const InfoCard = ({ 
+  title, 
+  content,
+  gradient 
+}: { 
+  title: string;
+  content: string;
+  gradient: string;
+}) => (
+  <div className="group">
+    <div className="relative bg-black/30 backdrop-blur-lg rounded-lg p-6 border border-primary/20 
+                    hover:border-primary/40 transition-all duration-300 overflow-hidden h-full">
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-5 
+                      group-hover:opacity-10 transition-opacity duration-500 blur-xl`}></div>
+      <div className="relative">
+        <h3 className={`text-xl font-bold bg-gradient-to-r ${gradient} bg-clip-text text-transparent mb-3`}>
+          {title}
+        </h3>
+        <p className="text-white/80 text-sm leading-relaxed">
+          {content}
+        </p>
+      </div>
+    </div>
+  </div>
+);
 
 export default Index;
