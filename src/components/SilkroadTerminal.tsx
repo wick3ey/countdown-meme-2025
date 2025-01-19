@@ -40,7 +40,7 @@ const TERMINAL_MESSAGES = [
   "2025: THE FUTURE IS NOW"
 ];
 
-export const NewYearTerminal = () => {
+export const SilkroadTerminal = () => {
   const [currentMessage, setCurrentMessage] = useState(0);
   const [text, setText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
@@ -131,7 +131,7 @@ export const NewYearTerminal = () => {
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            <span className="ml-4 text-sm text-green-400 font-mono">root@2025:~# new_year_terminal</span>
+            <span className="ml-4 text-sm text-green-400 font-mono">root@silkroad:~# silkroad_terminal</span>
           </div>
           
           {/* ASCII Art */}
